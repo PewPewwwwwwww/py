@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        border: none;
+        margin-top: 10px;
+        background-color: aqua;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    button {
+        padding: 10px 10px;
+        margin-top: 20px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <input id="First" type="number" placeholder="Enter First Number"><br>
+    <input id="Second" type="number" placeholder="Enter Second Number">
+    <br>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="Times">*</button>
+    <button id="divide">/</button>
+
+    <p id="result"></p>
+
+
+    <script>
+        function Calculator (operator) {
+            let First = Number(document.getElementById("First").value);
+            let Second = Number(document.getElementById("Second").value);
+
+            let result;
+
+            if (operator == "+") {
+                result = First + Second;
+            } else if (operator == "-") {
+                result = First - Second;
+            } else if (operator == "*") {
+                result = First * Second;
+            } else if (operator == "/") {
+                result = First / Second;
+            }
+
+            document.getElementById("result").innerHTML = "First Number: " + First + "<br>Second Number: " + Second + "<br>Result: " + result;
+        }
+
+        document.getElementById("plus").addEventListener("click", function(){
+            Calculator("+")
+        });
+        document.getElementById("minus").addEventListener("click", function(){
+            Calculator("-")
+        });
+        document.getElementById("Times").addEventListener("click", function(){
+            Calculator("*")
+        });
+        document.getElementById("divide").addEventListener("click", function(){
+            Calculator("/")
+        });
+    </script>
+</body>
+</html>

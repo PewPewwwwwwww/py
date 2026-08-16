@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+    <input id="Customer" type="text" placeholder="Customer Name"><br>
+    <input id="Milk" type="number" placeholder="Milk"><br>
+    <input id="bread" type="number" placeholder="bread"><br>
+    <input id="eggs" type="number" placeholder="eggs"><br>
+    <input id="Money" type="number" placeholder="Money">
+
+    <button id="Submit">Submit</button><br>
+
+    <p id="result"></p>
+
+    <script>
+        function grocery () {
+            let Customer = document.getElementById("Customer").value
+            let Milk = Number(document.getElementById("Milk").value)
+            let bread = Number(document.getElementById("bread").value)
+            let eggs = Number(document.getElementById("eggs").value)
+            let money = Number(document.getElementById("Money").value)
+
+            let total = Milk + bread + eggs;
+            let vat = total * 0.12;
+            let all_total = total + vat;
+            let change = money - all_total;
+
+            document.getElementById("result").innerHTML = "Customer Name: " + Customer + "<br>Milk: " + Milk + "<br>bread: " + bread + "<br>eggs: " + eggs + "<br>vat: " + vat + "<br>total: " + all_total + "<br>Your Money: " + money + "<br>Your Change is: " + change;
+        }
+
+        document.getElementById('Submit').addEventListener("click", grocery);
+        
+    </script>
+</body>
+</html>
