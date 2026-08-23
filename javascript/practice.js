@@ -15,7 +15,7 @@ class Grocery {
         console.log("egg: " + this.egg);
     }
 
-    Add_Product () {
+    Add_Product (callback) {
        this.total = this.milk + this.bread + this.egg;
        this.vat = this.total * 0.12;
        this.subtotal = this.total - this.vat
