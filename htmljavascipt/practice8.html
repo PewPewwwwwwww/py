@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Recipt</title>
+</head>
+<body>
+    <h1>Grocery Receipt</h1>
+    <form>
+        <label for="item">Item</label>
+        <input type="text" id="item" name="item">
+
+        <label for="Quantity">Quantity</label>
+        <input type="number" id="Quantity" name="Quantity">
+
+
+        <label for="Price">Price</label>
+        <input type="number" id="Price" name="Price">
+
+        <button type="button" onclick="additem()">Add Item</button>
+    </form>
+
+    <div id="receipt"></div>
+
+    <h3>Subtotal: $<span id="subtotal">0</span></h3>
+    <h3>VAT: $<span id="vat">0</span></h3>
+    <h3>Total: $<span id="total">0</span></h3>
+
+    <label>Payment</label>
+    <input type="number" id="payment" name="payment"><br>
+
+    <button id="pay" onclick="calculateChange()">Pay</button>
+
+    <h3>Change: $<span id="change">0</span></h3>
+
+    <script>
+        let subtotal = 0;
+
+
+    function additem() {
+        let item = document.getElementById("item").value;
+        let quantity = Number(document.getElementById("Quantity").value);
+        let price = Number(document.getElementById("Price").value);
+
+
+        let total = quantity * price;
+
+        subtotal = subtotal + total;
+
+        document.getElementById("receipt").innerHTML += item + " x " + quantity + " = $ " + total + "<br>";
+
+        let vat =  subtotal * 0.15;
+        let totals = subtotal + vat;
+
+        document.getElementById("subtotal").innerHTML = subtotal;
+        document.getElementById("vat").innerHTML = vat;
+        document.getElementById("total").innerHTML = totals; 
+    }
+
+
+    function calculateChange() {
+        let payment = Number(document.getElementById("payment").value);
+
+        let vat = subtotal * 0.15;
+        let totals = subtotal + vat;
+
+        let change = payment - totals;
+
+        document.getElementById("change").innerHTML = change;
+    }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

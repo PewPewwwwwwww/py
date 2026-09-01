@@ -21,13 +21,13 @@
         // .then(data => console.log(data.id))
         // .catch(error => console.log(error));
 
-        fetchData();
+        
 
         async function fetchData() {
 
             try{
 
-                const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+                const pokemonName = document.getElementById("pokemonName");
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
 
@@ -37,6 +37,7 @@
                 }
 
                 const data = await response.json();
+                console.log(data.id);
                 const pokemonSprite = data.sprites.front_default;
                 const imgElement = document.getElementById("pokemonSprite");
 

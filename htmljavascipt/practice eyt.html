@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <input placeholder="POKE NI ERICK" id="getpokemon" type="text">
+    <button id="buttonnierick">Fetch pokemon</button>
+    <img src="" id="sprite" style="display:none" alt="PIKOY">
+    <h1 id="hi"></h1>
+
+    <script>
+        async function pokimon(){
+            try{
+                const getpokemon = document.getElementById('getpokemon');
+                const hi = document.getElementById('hi');
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${getpokemon}`)
+
+                if(!response.ok){
+                    throw new Error('NO POKEMON')
+                }
+
+                hi.textContent = 'getting pokemon';
+                const data = await response.json();
+                const sprite = data.sprites.font_default;
+                const imgElement = document.getElementById("sprite");
+                imgElement.src = sprite;
+                imgElement.style.display = 'block';
+                
+            }
+            catch(error){
+                hi.textContent = 'NO POKEMON YET';
+                console.log(error);
+            
+            }    
+        }
+    
+        document.getElementById("buttonnierick").addEventListener('click', pokimon)
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -120,18 +120,18 @@
 
 // car("Erick", "Hoda", start)
 
-function car (name, car_name) {
-    console.log(name + " is using his car " + car_name);
-}
+// function car (name, car_name) {
+//     console.log(name + " is using his car " + car_name);
+// }
 
-function start (name, car_name, callback) {
-    console.log(name + " is strating his " + car_name + "vehicle")
-    callback()
-}
+// function start (name, car_name, callback) {
+//     console.log(name + " is strating his " + car_name + "vehicle")
+//     callback()
+// }
 
-function injoy () {
-    console.log("Enjoy the ride");
-}
+// function injoy () {
+//     console.log("Enjoy the ride");
+// }
 
-car("Erick", "Hoda");
-start("Erick", "Honda", injoy)
+// car("Erick", "Hoda");
+// start("Erick", "Honda", injoy)
