@@ -7,8 +7,10 @@
 </head>
 <body>
     <form>
-        <input type="text" placeholder="First Number" id="FirstNumber"><br>
-        <input type="text" placeholder="Second Number" id="SecondNumber"><br>
+        <label>First Number</label><br>
+        <input type="text" id="FirstNumber"><br>
+        <label>Second Number</label><br>
+        <input type="text" id="SecondNumber"><br>
         <select name="Math" id="Select"><br>
             <option value="+">+</option>
             <option value="-">-</option>
@@ -42,7 +44,7 @@
                 total = "invalid operator"
             }
  
-            document.getElementById("result").innerHTML = "<br>FirstNumber: " + FirstNumber + "<br>Second Number: " + SecondNumber + "<br>Result: " + total
+            document.getElementById("result").innerHTML = "<br>First Number: " + FirstNumber + "<br>Second Number: " + SecondNumber + "<br>Result: " + total
         }
 
         document.getElementById("submit").addEventListener("click", function() {
