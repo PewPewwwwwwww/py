@@ -22,6 +22,8 @@ const student = new libray("Erick", "Marvel", 99, "16/08/2026");
 student.borrowed()
 student.book()
 
+console.log("================================")
+
 const student1 = new libray("Dodong", "Marvel", 99, "16/08/2026");
 
 student1.borrowed()
