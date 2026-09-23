@@ -70,7 +70,7 @@ async function getComment() {
 
     const data = await response.json();
 
-    let filterComments = data.filter((comment) => comment.id === 3 || comment.postId === 3,);
+    let filterComments = data.filter((comment) => comment.id === 3 || comment.postId === 3  ,);
 
     filterComments.forEach((comment) => {
         const {name, email, body} = comment
