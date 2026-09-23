@@ -73,7 +73,7 @@ async function getComment() {
     let filterComments = data.filter((comment) => comment.id === 3 || comment.postId === 3  ,);
 
     filterComments.forEach((comment) => {
-        const {name, email, body} = comment
+        const {name, email, body} = comment 
         console.log("Name: ", name);
         console.log("email: ", email);
         console.log("body: ", body);
