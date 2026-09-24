@@ -45,7 +45,7 @@ const PersonInfo = [
     },
 ]
 
-let filterEach = PersonInfo.filter(PersonInfo => PersonInfo.Name === 1)
+let filterEach = PersonInfo.filter(PersonInfo => PersonInfo.id === 1)
 
 let filtercount = filterEach.length;
 
@@ -62,6 +62,9 @@ filterEach.forEach(PersonInfo => {
     console.log("Email: ", Email);
     console.log("============================");
 });
+
+
+// console.log(filterEach);
 
 console.log("");
 
