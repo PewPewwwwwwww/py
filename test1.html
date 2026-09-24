@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <button id="post">fetch data</button>
+    <p id="studentlist"></p>
+    
+
+    <h1>API info</h1>
+    <p id="Apilist"></p>
+
+    <script>
+        const student = [
+            {
+                StudentId: 18101053,
+                name: "Erick Gozo",
+                age: 20,
+                location: "Lib-og Maasin City",
+                enrolled: true,
+                yearlevel: 4,
+            },
+            {
+                StudentId: 18101054,
+                name: "PrinceAj Orias",
+                age: 20,
+                location: "Ibbara Maasin City",
+                enrolled: true,
+                yearlevel: 1,
+            },
+            {
+                StudentId: 18101055,
+                name: "Kyle Basco",
+                age: 20,
+                location: "Manhilo Maasin City",
+                enrolled: false,
+                yearlevel: 3,
+            },
+            {
+                StudentId: 18101056,
+                name: "Artemis Morada",
+                age: 20,
+                location: "Combado Maasin City",
+                enrolled: true,
+                yearlevel: 2,
+            },
+            {
+                StudentId: 18101057,
+                name: "Wommark Navarosa",
+                age: 20,
+                location: "tunga-tunga Maasin City",
+                enrolled: false,
+                yearlevel: 4,
+            },
+        ]
+
+        let button = document.getElementById("post")
+
+        let StudentList = document.getElementById("studentlist");
+
+        button.addEventListener("click", function(){
+        
+        let filterStudent = student.filter(students => students.enrolled === true);
+
+        let filtercount = filterStudent.length;
+
+        let enrolledStudent = student.filter(students => students.enrolled === true);
+        let notenrolledStudent = student.filter(students => students.enrolled === false);
+        
+        filterStudent.forEach(filterStudent => {
+
+            const {StudentId, name, age, location, enrolled, yearlevel} = filterStudent
+            StudentList.innerHTML += 
+            `
+            <p>StudentId: ${StudentId}</p>
+            <p>Name: ${name}</p>
+            <p>age: ${age}</p>
+            <p>location: ${location}</p>
+            <p>enrolled: ${enrolled}</p>
+            <p>yearlevel: ${yearlevel}</p><br>
+            `
+        });
+
+        StudentList.innerHTML += `
+            <h1>ALL of Them: ${filtercount}
+            <h1>EnrooledStudent: ${enrolledStudent.length}</h1>
+            <h1>notenrolledStudent: ${notenrolledStudent.length}</h1>
+        `
+
+        })
+
+        async function GetInfo() {
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts/1/comments");
+
+            const data = await response.json();
+
+            let filterStudentEach = data.filter(Student => Student.id === 1)
+
+            let Apilist = document.getElementById("Apilist");
+
+            filterStudentEach.forEach(Student => {
+             const {name, email, body} = Student
+             Apilist.innerHTML += `
+             <p>Name: ${name}</p>
+             <p>email: ${email}</p>
+             <p>body: ${body}</p>
+             `
+            });
+        };
+
+        GetInfo();
+
+    </script>
+</body>
+</html>
