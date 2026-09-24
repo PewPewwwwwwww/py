@@ -4,7 +4,8 @@ const PersonInfo = [
         Location: "Maasin City",
         Name: "Erick Gozo",
         PhoneNumber: 9922450732,
-        Email: "gozoerick@gamil.com"
+        Email: "gozoerick@gamil.com",
+        registered: true,
     },
 
     {
@@ -12,7 +13,8 @@ const PersonInfo = [
         Location: "Maasin City",
         Name: "Carlos Mendoza",
         PhoneNumber: 9922450732,
-        Email: "gozoerick@gamil.com"
+        Email: "gozoerick@gamil.com",
+        registered: false,
     },
 
     {
@@ -20,7 +22,8 @@ const PersonInfo = [
         Location: "Maasin City",
         Name: "Angela Reyes",
         PhoneNumber: 9922450732,
-        Email: "gozoerick@gamil.com"
+        Email: "gozoerick@gamil.com",
+        registered: true,
     },
 
     {
@@ -28,11 +31,26 @@ const PersonInfo = [
         Location: "Maasin City",
         Name: "Joshua Ramirez",
         PhoneNumber: 9922450732,
-        Email: "gozoerick@gamil.com"
+        Email: "gozoerick@gamil.com",
+        registered: false,
+    },
+
+    {
+        id: 5,
+        Location: "Maasin City",
+        Name: "Dodong",
+        PhoneNumber: 9922450732,
+        Email: "gozoerick@gamil.com",
+        registered: false,
     },
 ]
 
-let filterEach = PersonInfo.filter(PersonInfo => PersonInfo.id === 1 || PersonInfo.id === 2);
+let filterEach = PersonInfo.filter(PersonInfo => PersonInfo.Name === 1)
+
+let filtercount = filterEach.length;
+
+let registeredStudent = PersonInfo.filter(PersonInfo => PersonInfo.registered === true).length;
+let NotregisteredStudent = PersonInfo.filter(PersonInfo => PersonInfo.registered === false).length;
 
 filterEach.forEach(PersonInfo => {
     const {id, Location, Name, PhoneNumber, Email} = PersonInfo
@@ -42,8 +60,17 @@ filterEach.forEach(PersonInfo => {
     console.log("Name: ", Name);
     console.log("PhoneNumber: ", PhoneNumber);
     console.log("Email: ", Email);
-    console.log("============================")
+    console.log("============================");
 });
+
+console.log("");
+
+console.log("All of them: ", filtercount);
+
+console.log("Registered Student: ", registeredStudent);
+console.log("Not Registered Student: ", NotregisteredStudent);
+
+console.log("");
 
 
 async function getUser() {
@@ -60,7 +87,7 @@ async function getUser() {
 
             console.log("Name: ", name);
             console.log("email: ", email);
-            console.log("addreas: ", address.city);
+            console.log("address: ", address.city);
             console.log("============================")
         });
         

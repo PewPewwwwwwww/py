@@ -49,6 +49,7 @@ students.unshift({
 
 let filteredStudents = students.filter((student) => student.course === "BSBA");
 
+
 console.log(filteredStudents);
 
 async function getComments() {

@@ -58,8 +58,10 @@
 
         let filterStudent = student.filter(students => students.enrolled === true);
 
+        let filtercount = filterStudent.length;
+
         let enrolledStudent = student.filter(students => students.enrolled === true);
-        let notenrolledStudent = student.filter(students => !students.enrolled === true);
+        let notenrolledStudent = student.filter(students => students.enrolled === false);
         
         let StudentList = document.getElementById("studentlist");
 
@@ -78,6 +80,7 @@
         });
 
         StudentList.innerHTML += `
+            <h1>ALL of Them: ${filtercount}
             <h1>EnrooledStudent: ${enrolledStudent.length}</h1>
             <h1>notenrolledStudent: ${notenrolledStudent.length}</h1>
         `
