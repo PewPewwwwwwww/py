@@ -58,9 +58,10 @@ async function getComments() {
   );
   const data = await response.json();
 
-  let filteredComments = data.filter((comment) => comment.id === comment.postId,);
+  let filteredComments = data.filter((comment) => comment.id === comment.postId);
 
   filteredComments.forEach((comment) => {
+    console.log(`PostId:  ${comment.postId}`);
     console.log(`Name: ${comment.name}`);
     console.log(`Email: ${comment.email}`);
     console.log(`Body: ${comment.body}`);

@@ -1,0 +1,77 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Student</h1>
+        <p id="StuidentResult"></p>
+
+        <script>
+            const Students = [
+                {
+                    StudentId: 1,
+                    Name: "Erick",
+                    Age: 22,
+                    Enrolled: true,
+                    YearLevel: 4,
+                },
+
+                {
+                    StudentId: 2,
+                    Name: "James",
+                    Age: 22,
+                    Enrolled: true,
+                    YearLevel: 4,
+                },
+
+                {
+                    StudentId: 3,
+                    Name: "PrinceAj",
+                    Age: 22,
+                    Enrolled: true,
+                    YearLevel: 3,
+                },
+
+                {
+                    StudentId: 4,
+                    Name: "Mheryk",
+                    Age: 25,
+                    Enrolled: true,
+                    YearLevel: 2,
+                },
+
+                {
+                    StudentId: 5,
+                    Name: "Artemis",
+                    Age: 21,
+                    Enrolled: true,
+                    YearLevel: 1,
+                },
+            ];
+
+            let Resultdata = document.getElementById("StuidentResult")
+
+            let filter = Students.filter(Student => Student.StudentId === 1 || Student.StudentId === 2)
+
+
+            filter.forEach(Student => {
+                const {StudentId, Name, Age, Enrolled, YearLevel} = Student;
+                Resultdata.innerHTML += `
+
+                <br>
+                <h1>StudentId: ${StudentId}</h1>
+                <h1>Name: ${Name}</h1>
+                <h1>Age: ${Age}</h1>
+                <h1>Enrolled: ${Enrolled}</h1>
+                <h1>YearLevel: ${YearLevel}</h1>
+            
+                `;
+            })
+                                                
+            
+        </script>
+    </body>
+    </html>

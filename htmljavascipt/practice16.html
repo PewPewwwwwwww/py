@@ -68,9 +68,9 @@
 
         const studentList = document.getElementById("studentList");
 
-        filterStudent.forEach(student => {
+        filterStudent.forEach(filterStudent => {
 
-            const {name, studentID, age, course, yearlevel, enrolled} = student
+            const {name, studentID, age, course, yearlevel, enrolled} = filterStudent
 
             studentList.innerHTML += `
                 <div class="student-card">

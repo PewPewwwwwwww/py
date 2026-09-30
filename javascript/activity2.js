@@ -61,7 +61,7 @@ filterEach.forEach(PersonInfo => {
     console.log("PhoneNumber: ", PhoneNumber);
     console.log("Email: ", Email);
     console.log("============================");
-});
+}); 
 
 
 // console.log(filterEach);
