@@ -80,10 +80,7 @@ function generateReport(students) {
     });
 
     const classAverage =
-        students.reduce(
-            (sum, student) => sum + student.average,
-            0
-        ) / students.length;
+        students.reduce((sum, student) => sum + student.average,) / students.length;
 
     const passingStudents = students.filter(
         student =>
