@@ -81,8 +81,9 @@ function generateReport (products) {
     });
 
     const qualifiedProducts = products.filter(product => {
-        const status = product.getStockStatus();
-        return status.includes("PREMIUM") || status.includes("IN") || status.includes("LOW");
+        return (
+            product.getAverage() >= 800 && product.stock > 0
+        );
     });
 
 
